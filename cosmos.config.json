@@ -1,0 +1,8 @@
+{
+	"staticPath": "public",
+	"watchDirs": ["src"],
+	"webpack": {
+		"configPath": "react-scripts/config/webpack.config"
+	},
+	"globalImports": ["src/styles/main.css"]
+}

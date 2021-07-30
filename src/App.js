@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
+import Home from "./pages/home";
+import Cart from "./pages/cart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<BrowserRouter>
+			<nav className="w-full h-20 px-20 shadow-xl flex justify-between items-center">
+				<Link
+					style={{ fontStyle: "oblique", color: "#FDF2F9" }}
+					className="text-lg bg-black py-1 px-2 tracking-widest logo"
+					to="/"
+				>
+					Cosmos FOODS
+				</Link>
+
+				<NavLink
+					activeClassName="border-b-2"
+					className="tracking-wider"
+					to="/cart"
+					exact
+				>
+					Go to Cart
+				</NavLink>
+			</nav>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/cart" component={Cart} />
+			</Switch>
+		</BrowserRouter>
+	);
+};
 
 export default App;
